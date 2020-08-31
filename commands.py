@@ -1,4 +1,4 @@
-from structure import Node
+from node import Node
 
 SPECIAL_SYMBOLS = {
     '^': 'date',
@@ -6,7 +6,8 @@ SPECIAL_SYMBOLS = {
     '#': 'parent_id'
 }
 
-def add_node(string):
+
+def add_cmd(app, string):
     # params of the next node obj
     name = ''
     params = {
@@ -24,11 +25,18 @@ def add_node(string):
             params[SPECIAL_SYMBOLS[spec_symb]] = par
         elif not name_ends:
             name += word + ' '
-    # print(name)
-    # print(params)
     name = name[:-1]
 
-    return Node(name, params['parent'], params['date'], params['duration'])
+    app.nodes.append(Node(name, params['parent'], params['date'], params['duration']))
+
+
+def list_cmd(app, string):
+    for node in app.nodes:
+        print(node)
+
+
+def exit_cmd(app, string):
+    exit()
 
 
 # test_strings = [
