@@ -31,11 +31,11 @@ def add_node(string):
     return Node(name, params['parent'], params['date'], params['duration'])
 
 
-test_strings = [
-    'Learn English',
-    'Try SkyEng ^31.08 =2h #1',
-    'Think about papers at school ^01.09 =30m #4',
-]
-
-for test_string in test_strings:
-    print(add_node(test_string))
+# test_strings = [
+#     'Learn English',
+#     'Try SkyEng ^31.08 =2h #1',
+#     'Think about papers at school ^01.09 =30m #4',
+# ]
+#
+# for test_string in test_strings:
+#     print(add_node(test_string))
