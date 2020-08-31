@@ -13,18 +13,6 @@ class Node:
 
 # TODO: add __del__
 
-#
-# class Task(Node):
-#     def __init__(self, name, parent):
-#         super().__init__(name, parent)
-
-
-
-# class Goal(Node):
-#     def __init__(self, name, parent, end_date):
-#         super().__init__(name, parent)
-#         self.end_date = end_date
-
 
 # par = Node('Parent', None)
 # ch1 = Node('Child1', par, None)
