@@ -26,9 +26,9 @@ class Node:
 #         self.end_date = end_date
 
 
-par = Node('Parent', None)
-ch1 = Node('Child1', par, None)
-ch2 = Node('Child2', par, '30.11')
-grch = Node('Grandchild', ch2, '31.08', '2h')
-
-print(par, ch1, ch2, grch, sep = '\n')
+# par = Node('Parent', None)
+# ch1 = Node('Child1', par, None)
+# ch2 = Node('Child2', par, '30.11')
+# grch = Node('Grandchild', ch2, '31.08', '2h')
+#
+# print(par, ch1, ch2, grch, sep = '\n')
