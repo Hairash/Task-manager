@@ -1,17 +1,20 @@
-from commands import add_cmd, list_cmd, exit_cmd
+from commands import *
 
 COMMANDS = {
     'add': add_cmd,
+    'delete': delete_cmd,
     'exit': exit_cmd,
     'list': list_cmd,
 }
 
 
+# parse command string and process command
 def process_command(app, string):
     words = string.split()
     cmd = words[0]
     par = ' '.join(words[1:])
     COMMANDS[cmd](app, par)
+    app.save_nodes()
 
 
 # test_strings = [

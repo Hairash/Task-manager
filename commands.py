@@ -1,5 +1,6 @@
-from node import Node
+from node import *
 
+# Symbols used for quick adding task
 SPECIAL_SYMBOLS = {
     '^': 'date',
     '=': 'duration',
@@ -16,6 +17,7 @@ def add_cmd(app, string):
         'duration': None,
     }
 
+    # parse string with special symbols, make params dict from it
     words = string.split()
     name_ends = False
     for word in words:
@@ -27,12 +29,20 @@ def add_cmd(app, string):
             name += word + ' '
     name = name[:-1]
 
-    app.nodes.append(Node(name, params['parent'], params['date'], params['duration']))
+    node_row = create_node_row(name, params['parent_id'], params['date'], params['duration'])
+    print('node_row:', node_row)
+    app.nodes = app.nodes.append(node_row, ignore_index=True)
+
+
+def delete_cmd(app, string):
+    x = int(string)
+    app.nodes = app.nodes.drop([x])
 
 
 def list_cmd(app, string):
-    for node in app.nodes:
-        print(node)
+    print(app.nodes)
+    # for node in app.nodes:
+    #     print(node)
 
 
 def exit_cmd(app, string):

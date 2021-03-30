@@ -1,3 +1,7 @@
+def create_node_row(name, parent_id, date=None, duration=None):
+    return dict(name=name, parent=parent_id, date=date, duration=duration)
+
+
 class Node:
     def __init__(self, name, parent, date=None, duration=None):
         self.name = name
